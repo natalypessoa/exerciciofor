@@ -1,1 +1,38 @@
+/* Nataly Pessoa de Paula Cruz
+Faça um algoritmo que receba a idade e a altura de 10 pessoas:
+– calcule e mostre a média das alturas daquelas com mais de 50 anos.
 
+*/
+import java.util.Scanner;
+
+public class Exercicio4 {
+    public static void main(String[] args) {
+
+Scanner teclado = new Scanner(System.in);
+
+int idade;
+double altura, somaAltura = 0;
+int contador = 0;
+
+for (int i = 0; i < 10; i++) {
+    System.out.print("Idade: ");
+    idade = teclado.nextInt();
+    
+    System.out.print("Altura: ");
+    altura = teclado.nextDouble();
+    
+    if (idade > 50) {
+        somaAltura += altura;
+        contador++;
+    }
+}
+
+if (contador > 0) {
+    System.out.println("Média das alturas: " + (somaAltura / contador));
+} else {
+    System.out.println("Nenhuma pessoa com mais de 50 anos.");
+}
+
+teclado.close();
+    }
+}
