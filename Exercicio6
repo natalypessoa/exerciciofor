@@ -1,0 +1,52 @@
+/* Nataly Pessoa de Paula Cruz
+Em uma eleição presidencial, existem quatro candidatos.
+Os votos são informados através de um código:
+¨ 1, 2, 3 ou 4 - Voto para o respectivo candidato
+¨ 5 - Voto nulo
+¨ 6 - Voto em branco
+Faça um algoritmo que leia o voto de 10 eleitores.
+Calcule e mostre:
+¨ a) O total de votos para cada candidato;
+¨ b) O total de votos nulos;
+¨ c) O total de votos em branco;
+¨ d) O percentual dos votos brancos e nulos.
+*/
+import java.util.Scanner;
+
+public class Exercicio6 {
+    public static void main(String[] args) {
+
+Scanner teclado = new Scanner(System.in);
+
+int voto;
+int c1 = 0, c2 = 0, c3 = 0, c4 = 0, nulos = 0, brancos = 0;
+
+for (int i = 0; i < 10; i++) {
+    System.out.print("Digite o voto: ");
+    voto = teclado.nextInt();
+
+    switch (voto) {
+        case 1: c1++; break;
+        case 2: c2++; break;
+        case 3: c3++; break;
+        case 4: c4++; break;
+        case 5: nulos++; break;
+        case 6: brancos++; break;
+    }
+}
+
+int total = 10;
+
+System.out.println("Candidato 1: " + c1);
+System.out.println("Candidato 2: " + c2);
+System.out.println("Candidato 3: " + c3);
+System.out.println("Candidato 4: " + c4);
+System.out.println("Nulos: " + nulos);
+System.out.println("Brancos: " + brancos);
+
+System.out.println("Percentual nulos: " + (nulos * 100.0 / total) + "%");
+System.out.println("Percentual brancos: " + (brancos * 100.0 / total) + "%");
+
+teclado.close();
+    }
+}
